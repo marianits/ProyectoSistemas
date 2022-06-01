@@ -17,7 +17,7 @@ export class ListarComponent implements OnInit {
   ngOnInit(): void {
     this.service.getComercios()
     .subscribe(data=>{
-      this.comercios=data
+      this.comercios=data._embedded.comercioList
     })
   }
 }
