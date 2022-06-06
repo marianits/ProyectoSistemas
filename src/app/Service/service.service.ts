@@ -36,7 +36,7 @@ export class ServiceService {
 
   deleteComercio(comercio:Comercio){
     var ruta = this.Url +"/" ;
-    return this.http.delete<Comercio>(ruta+comercio.id);
+    return this.http.delete(ruta+comercio.id);
   }
 
 }
