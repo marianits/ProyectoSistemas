@@ -3,5 +3,6 @@ export class Comercio {
     nombre: string;
     telf: string;
     direccion: string;
+    link_logo: string;
     id_adm_comercio: number;
 }
