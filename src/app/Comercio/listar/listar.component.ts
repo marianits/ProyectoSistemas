@@ -20,4 +20,8 @@ export class ListarComponent implements OnInit {
       this.comercios=data._embedded.comercioList
     })
   }
+  Editar(comercio:Comercio): void{
+    localStorage.setItem("id", comercio.id.toString());
+    this.router.navigate(["edit"]);
+  }
 }

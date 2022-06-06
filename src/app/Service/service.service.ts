@@ -13,14 +13,24 @@ export class ServiceService {
 
   getComercios(){
     var ruta = this.Url + "/listarComercios";
-
     var response = this.http.get<RequestResponse<ComercioList>>(ruta)
-
     return response;
   }
+
   createComercio(comercio:Comercio){
     var ruta = this.Url + "/crearNuevoComercio";
     var response = this.http.post<Comercio>(ruta,comercio);
     return response;
   }
+
+  getComercioId(id:number){
+    var ruta = this.Url +"/" +id ;
+    return this.http.get<Comercio>(ruta)
+  }
+
+  updateComercio(comercio:Comercio){
+    var ruta = this.Url +"/" ;
+    return this.http.put<Comercio>(ruta+comercio.id,comercio)
+  }
+
 }
