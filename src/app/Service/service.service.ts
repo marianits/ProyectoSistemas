@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Comercio, ComercioResponse } from '../Models/Comercio';
+import { RequestResponse } from '../Models/Utils/RequestResponse';
+import { ComercioList } from '../Models/ComercioList';
+import { Comercio } from '../Models/Comercio'
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +13,14 @@ export class ServiceService {
 
   getComercios(){
     var ruta = this.Url + "/listarComercios";
-    var response = this.http.get<ComercioResponse>(ruta)
+
+    var response = this.http.get<RequestResponse<ComercioList>>(ruta)
+
     return response;
   }
-  createComercio(){
-    var ruta = this.Url + "/listarComercios";
-    var response = this.http.post<Comercio(ruta)
+  createComercio(comercio:Comercio){
+    var ruta = this.Url + "/crearNuevoComercio";
+    var response = this.http.post<Comercio>(ruta,comercio);
+    return response;
   }
 }

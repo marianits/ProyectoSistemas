@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { Comercio } from 'src/app/Models/Comercio';
+import { ServiceService } from '../../Service/service.service'
 
 @Component({
   selector: 'app-add',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private service:ServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  comercio:Comercio = new Comercio();
+  Guardar(){
+    this.service.createComercio(this.comercio)
+    .subscribe(data=>{
+      alert("Se Agrego con Exito!! ");
+      this.router.navigate(["listar"]);
+    })
   }
 
 }
