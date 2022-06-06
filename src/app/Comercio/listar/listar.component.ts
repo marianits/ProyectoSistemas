@@ -24,4 +24,11 @@ export class ListarComponent implements OnInit {
     localStorage.setItem("id", comercio.id.toString());
     this.router.navigate(["edit"]);
   }
+  Eliminar(comercio:Comercio): void{
+    this.service.deleteComercio(comercio)
+    .subscribe(data=>{
+      this.comercios=this.comercios.filter(c=>c!==comercio);
+      alert("Usuario eliminado...");
+    })
+  }
 }

@@ -30,7 +30,12 @@ export class ServiceService {
 
   updateComercio(comercio:Comercio){
     var ruta = this.Url +"/" ;
-    return this.http.put<Comercio>(ruta+comercio.id,comercio)
+    return this.http.put<Comercio>(ruta+comercio.id,comercio);
+  }
+
+  deleteComercio(comercio:Comercio){
+    var ruta = this.Url +"/" ;
+    return this.http.delete<Comercio>(ruta+comercio.id);
   }
 
 }
