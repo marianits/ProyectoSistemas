@@ -19,6 +19,7 @@ export class ServiceService {
 
   createComercio(comercio:Comercio){
     var ruta = this.Url + "/crearNuevoComercio";
+    comercio.link_logo="https://imgur.com/22zktlI"
     var response = this.http.post<Comercio>(ruta,comercio);
     return response;
   }
