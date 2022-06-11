@@ -19,6 +19,9 @@ export class ListarPaquetesComponent implements OnInit {
       this.paquetes=data._embedded.paqueteList
     })
   }
+  Add(): void{
+    this.router.navigate(["addPaquete"]);
+  }
   Editar(paquete:Paquete): void{
     localStorage.setItem("id", paquete.id.toString());
     this.router.navigate(["edit"]);
