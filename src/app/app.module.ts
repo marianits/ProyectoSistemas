@@ -8,14 +8,18 @@ import { AddComponent } from './Comercio/add/add.component';
 import { EditComponent } from './Comercio/edit/edit.component';
 import { FormsModule } from '@angular/forms'
 import { ServiceService } from '../app/Service/service.service'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from './Paquetes/update/update.component';
+import { NavbarComponent } from './Components/navbar/navbar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    UpdateComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

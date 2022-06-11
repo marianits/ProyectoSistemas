@@ -1,0 +1,34 @@
+<div class="container-fluid vh-100">
+    <div class="mb-2 mt-2">
+        <button button class="btn btn-info"> + </button>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>Paquetes</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Paquete</th>
+                    <th>Habilitado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paquete of paquetes" class="text-center">
+                    <td>{{paquete.id}}</td>
+                    <td>{{paquete.nombre}}</td>
+                    <td>{{paquete.habilitado}}</td>
+                    <td>
+                        <button (click)="Editar(paquete)" class="btn btn-warning">Editar</button>
+                        <button (click)="Eliminar(paquete)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                        <button class="btn btn-info" style="margin-left: 10px;">I</button>
+                    </td>
+                </tr>
+            </tbody>	
+            </table>
+        </div>
+    </div>
+</div>
