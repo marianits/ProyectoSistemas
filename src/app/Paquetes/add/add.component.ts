@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { Paquete } from 'src/app/Models/Paquete';
+import { PaqueteInventario } from 'src/app/Models/PaqueteInventario';
 import { PaqueteService } from '../../Service/paquete.service'
 import { FormControl } from '@angular/forms';
 
@@ -17,14 +17,17 @@ export class AddPaqueteComponent implements OnInit {
   }
 
   checked = new FormControl('');
-  paquete:Paquete = new Paquete();
-  cities = ['bar', 'bi', 'co']
-  // Guardar(){
-  //   this.service.createPaquete(this.paquete)
-  //   .subscribe(data=>{
-  //     alert("Se Agrego con Exito!! ");
-  //     this.router.navigate(["listarPaquetes"]);
-  //   })
-  // }
+  paquete:PaqueteInventario = new PaqueteInventario();
+  Guardar(){
+    console.log(this.paquete);
+    this.paquete.id_comercio = 1;
+    this.paquete.id_tipo_paquete = 1;
+    this.paquete.link_paquete = '';
+    this.service.createPaquete(this.paquete)
+    .subscribe(data=>{
+      alert("Se Agrego con Exito!! ");
+      this.router.navigate(["listarPaquetes"]);
+    })
+  }
 
 }

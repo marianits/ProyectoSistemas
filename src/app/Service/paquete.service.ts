@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { RequestResponse } from '../Models/Utils/RequestResponse';
 import { PaqueteList } from '../Models/PaqueteList';
 import { Paquete } from '../Models/Paquete'
+import { PaqueteInventario } from '../Models/PaqueteInventario';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,9 +18,9 @@ export class PaqueteService {
     return response;
   }
 
-  createPaquete(paquete:Paquete){
+  createPaquete(paquete:PaqueteInventario){
     var ruta = this.Url + "/crearNuevoPaquete";
-    var response = this.http.post<Paquete>(ruta,paquete);
+    var response = this.http.post<PaqueteInventario>(ruta,paquete);
     return response;
   }
 

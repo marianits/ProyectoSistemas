@@ -7,27 +7,37 @@
             <form action="">
                 <div class="form-group">
                     <label for="">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre">
+                    <input type="text" class="form-control" [(ngModel)]="paquete.nombre" name="nombre">
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 10px;">
                     <label for="">Descripcion:</label>
-                    <input type="text" class="form-control" name="descripcion">
+                    <input type="text" class="form-control" [(ngModel)]="paquete.descripcion" name="descripcion">
                 </div> 
+                <select class="form-select" aria-label="Default select example" style="margin-bottom: 10px;">
+                    <option selected>Tipo de Paquete</option>
+                    <option value="1">Paquete Sorpresa</option>
+                    <option value="2">Paquete Detallado</option>
+                </select>
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [formControl]="checked">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [formControl]="checked" 
+                     name="habilitado" [(ngModel)]="paquete.habilitado">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Habilitado</label>
                 </div>
                 <div *ngIf="checked.value">
                     <div class="form-group">
-                        <label for="">Precio:</label>
-                        <input type="text" class="form-control" name="precio">
+                        <label for="codigo">Codigo:</label>
+                        <input type="text" class="form-control" [(ngModel)]="paquete.codigo" name="codigo">
                     </div>
                     <div class="form-group">
-                        <label for="">Cantidad:</label>
-                        <input type="text" class="form-control" name="cantidad">
+                        <label for="precio">Precio:</label>
+                        <input type="text" class="form-control" [(ngModel)]="paquete.precio" name="precio">
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock:</label>
+                        <input type="text" class="form-control" [(ngModel)]="paquete.stock" name="stock">
                     </div>
                 </div>
-                <button  class="btn btn-danger mt-2">Guardar</button>
+                <button (click)="Guardar()" class="btn btn-danger mt-2">Guardar</button>
             </form>
         </div>
     </div>
