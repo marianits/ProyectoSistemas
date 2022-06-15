@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { Paquete } from 'src/app/Models/Paquete';
 import { PaqueteService } from '../../Service/paquete.service'
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -15,13 +16,15 @@ export class AddPaqueteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  checked = new FormControl('');
   paquete:Paquete = new Paquete();
-  Guardar(){
-    this.service.createPaquete(this.paquete)
-    .subscribe(data=>{
-      alert("Se Agrego con Exito!! ");
-      this.router.navigate(["listarPaquetes"]);
-    })
-  }
+  cities = ['bar', 'bi', 'co']
+  // Guardar(){
+  //   this.service.createPaquete(this.paquete)
+  //   .subscribe(data=>{
+  //     alert("Se Agrego con Exito!! ");
+  //     this.router.navigate(["listarPaquetes"]);
+  //   })
+  // }
 
 }

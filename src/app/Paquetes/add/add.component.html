@@ -14,10 +14,20 @@
                     <input type="text" class="form-control" name="descripcion">
                 </div> 
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [formControl]="checked">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Habilitado</label>
                 </div>
-                <button (click)="Guardar()" class="btn btn-danger mt-2">Guardar</button>
+                <div *ngIf="checked.value">
+                    <div class="form-group">
+                        <label for="">Precio:</label>
+                        <input type="text" class="form-control" name="precio">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Cantidad:</label>
+                        <input type="text" class="form-control" name="cantidad">
+                    </div>
+                </div>
+                <button  class="btn btn-danger mt-2">Guardar</button>
             </form>
         </div>
     </div>

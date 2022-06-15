@@ -18,9 +18,12 @@
                     <input type="text" class="form-control" [(ngModel)]="comercio.direccion" name="direccion">
                 </div>
                 <div class="form-group">
-                    <label for="">ID del administrador:</label>
+                    <label for="">ID del admin:</label>
                     <input type="number" class="form-control" [(ngModel)]="comercio.id_adm_comercio" name="idAdministrador">
                 </div>
+                <ul *ngFor="let city of cities">
+                    <li>{{city}}</li>
+                </ul>
                 <button (click)="Guardar()" class="btn btn-danger mt-2">Guardar</button>
             </form>
         </div>

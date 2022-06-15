@@ -16,6 +16,7 @@ export class AddComponent implements OnInit {
   }
 
   comercio:Comercio = new Comercio();
+  cities = ['bar', 'bi', 'co'];
   Guardar(){
     this.service.createComercio(this.comercio)
     .subscribe(data=>{
